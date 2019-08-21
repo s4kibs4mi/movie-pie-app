@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  movie-pie-front:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: ["sh", "-c", "npm", "start"]

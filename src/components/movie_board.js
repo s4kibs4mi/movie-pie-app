@@ -1,11 +1,23 @@
 import React, {Component} from "react";
+import MovieCard from "./movie_card";
 
 class MovieBoard extends Component {
 
     render() {
         return (
-            <h1></h1>
+            <div className={"panel-group"}>
+                {this.getMovies()}
+            </div>
         );
+    }
+
+    getMovies() {
+        let movies = this.props.movies.data;
+        if (movies !== undefined && movies !== null) {
+            return movies.map(movie => <MovieCard title={movie.Title} poster={movie.Poster}
+                                                  id={movie.imdbID}/>);
+        }
+        return <h3>No data found</h3>
     }
 }
 
