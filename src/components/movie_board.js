@@ -12,6 +12,10 @@ class MovieBoard extends Component {
     }
 
     getMovies() {
+        if (this.props.movies === undefined) {
+            return <h3>Server unreachable!</h3>
+        }
+
         let movies = this.props.movies.data;
         if (movies !== undefined && movies !== null) {
             return movies.map(movie => <MovieCard title={movie.Title} poster={movie.Poster}
