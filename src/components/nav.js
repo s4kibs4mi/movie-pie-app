@@ -2,6 +2,10 @@ import React, {Component} from "react"
 
 class Nav extends Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <nav className={"navbar navbar-default"}>
@@ -15,16 +19,14 @@ class Nav extends Component {
                     </ul>
 
                     <div className={"form-group navbar-form navbar-left"}>
-                        <input type={"text"} className={"form-control"} placeholder={"Search"}/>
+                        <input type={"text"} className={"form-control"} placeholder={"Search"}
+                               onChange={this.props.onSearchTextChanged}/>
                     </div>
                 </div>
             </nav>
         );
     }
-
-    onSearchTextChange() {
-
-    }
+    
 }
 
 export default Nav;
