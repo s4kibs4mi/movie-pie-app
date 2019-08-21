@@ -12,3 +12,5 @@
 docker-compose up
 ```
 3. Browse at `http://localhost:3000`
+
+![Screen1](./extras/screen_1.png)
